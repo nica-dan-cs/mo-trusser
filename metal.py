@@ -14,3 +14,6 @@ class metal:
       self.maximum_diameter = float(metal_df['maximum_diameter'])
       self.fyk = float(metal_df['fyk'])
       self.ft = float(metal_df['ft'])
+
+   def retrieve_name(self):
+      return self.european_name + " / " + self.comercial_name

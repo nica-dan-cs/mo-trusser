@@ -8,23 +8,17 @@ required_characteristics = []
 for i,entry in characteristics_df.iterrows():
 	required_characteristics.append(entry['Characteristic'])
 
-required_classes = []
-for required_class in characteristics_df:
-	if required_class == "Characteristic":
+all_concrete_names = []
+for concrete_name in characteristics_df:
+	if concrete_name == "Characteristic":
 		continue
-	required_classes.append(required_class)
+	all_concrete_names.append(concrete_name)
 
 for i,required_characteristic in zip(range(len(required_characteristics)),required_characteristics):
 	characteristics[required_characteristic] = {}
-	for required_class in required_classes:
-		to_be_added = characteristics_df[required_class].loc[i]
-		characteristics[required_characteristic][required_class] = to_be_added
-
-def fck(C):
-	return C.strip('C').split('/')[0]
-
-def fck_cube(C):
-	return C.strip('C').split('/')[1]
+	for concrete_name in all_concrete_names:
+		to_be_added = characteristics_df[concrete_name].loc[i]
+		characteristics[required_characteristic][concrete_name] = to_be_added
 
 def characteristic(characteristic_name,class_name):
 	return characteristics[characteristic_name][class_name]

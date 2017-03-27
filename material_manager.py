@@ -8,17 +8,15 @@ def load_all_metals():
 	all_metals = []
 	metals_df = pd.read_csv(metal_csv_filename)
 	for i,entry in metals_df.iterrows():
-		all_metals.append(metals_df.iloc[i])
+		all_metals.append(metal(metals_df.iloc[i]))
 	return all_metals
 
-def load_all_metals_as_strings():
+def load_all_metal_names():
 	all_metals = load_all_metals()
-	all_metals_as_strings = []
+	all_metals_names = []
 
 	for metal in all_metals:
-		stringed_metal = ""
-		for i in range(len(metal)):
-			stringed_metal = stringed_metal + str(metal[i]) + "-"
-		all_metals_as_strings.append(stringed_metal[:-1])
+		metal_name = str(metal.european_name) + " / " + str(metal.comercial_name)
+		all_metals_names.append(metal_name)
 
-	return all_metals_as_strings
+	return all_metals_names
