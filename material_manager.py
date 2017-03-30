@@ -1,14 +1,13 @@
 import pandas as pd
-from metal import *
+from otel import *
 
-metal_csv_filename = "metal.csv"
-concrete_csv_fillename = "concrete.csv"
+metal_csv_filename = "otel.csv"
 
 def load_all_metals():
 	all_metals = []
 	metals_df = pd.read_csv(metal_csv_filename)
 	for i,entry in metals_df.iterrows():
-		all_metals.append(metal(metals_df.iloc[i]))
+		all_metals.append(otel(metals_df.iloc[i]))
 	return all_metals
 
 def load_all_metal_names():
