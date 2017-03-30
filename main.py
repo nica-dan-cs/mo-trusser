@@ -8,6 +8,7 @@ from concrete_resistance_n_deformation import *
 
 init_areas_n_masses()
 init_concrete_resistance_n_deformation()
+load_all_metals()
 
 main_menu = Tk()
 main_menu.wm_title("mo-trusser v 0.1")
