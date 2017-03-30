@@ -2,8 +2,8 @@ from window import *
 from tkinter import *
 from tkinter.ttk import *
 from material_manager import *
-from process import *
 from beton import *
+from areas_n_masses import *
 
 class window_grinda(window):
 

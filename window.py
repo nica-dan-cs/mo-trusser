@@ -1,8 +1,5 @@
 from tkinter import *
 from tkinter.ttk import *
-from material_manager import *
-from process import *
-from beton import *
 
 class window:
 	frame = None

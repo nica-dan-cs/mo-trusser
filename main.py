@@ -3,6 +3,11 @@ from tkinter import *
 from tkinter.ttk import *
 from material_manager import *
 from window_grinda import *
+from areas_n_masses import *
+from concrete_resistance_n_deformation import *
+
+init_areas_n_masses()
+init_concrete_resistance_n_deformation()
 
 main_menu = Tk()
 main_menu.wm_title("mo-trusser v 0.1")
