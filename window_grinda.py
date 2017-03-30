@@ -85,7 +85,7 @@ class window_grinda(window):
 		self.listbox_otel.config(yscrollcommand=scrollbar_otel.set)
 		scrollbar_otel.config(command=self.listbox_otel.yview)
 
-		all_metals = load_all_metals()
+		all_metals = get_all_metals()
 		for metal in all_metals:
 			self.listbox_otel.insert(END,metal.retrieve_name())
 		self.listbox_otel.bind("<<ListboxSelect>>",self.listbox_otel_callback)
@@ -104,13 +104,13 @@ class window_grinda(window):
 		self.label_beton.config(text="Beton: " + str(self.listbox_beton.get(index_of_selected)))
 
 	def run_button_callback(self):
-		beton = self.label_beton['text']
-		otel = self.label_otel['text']
+		beton_ales = beton(self.label_beton['text'].split(' ')[1])
+		otel_ales = get_metal_by_names(self.label_otel['text'])
 		grosime = self.tb_grosime.get("1.0",END)
 		mcap = self.tb_mcap.get("1.0",END)
 		acoperire = self.tb_acoperire.get("1.0",END)
 
-		output = self.process(beton,otel,grosime,mcap,acoperire)
+		output = self.process(beton_ales,otel_ales,grosime,mcap,acoperire)
 		### Render output to user ###
 
 	def process(self,beton,otel,grosime,mcap,acoperire):
