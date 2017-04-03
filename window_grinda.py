@@ -115,4 +115,8 @@ class window_grinda(window):
 
 	def process(self,beton,otel,grosime,mcap,acoperire):
 		### Perform computations here ###
+		x=grosime
+		o=beton.fck
+		
+		print (o)
 		print("self.process() not implemented yet")

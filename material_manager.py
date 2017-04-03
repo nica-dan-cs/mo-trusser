@@ -21,7 +21,7 @@ def get_all_metals_names():
 	return all_metals_names
 
 def get_metal_by_names(names):
-	european_name = names.split(" / ")[0]
+	european_name = names.split(" / ")[0].split(': ')[1]
 	comercial_name = names.split(" / ")[1]
 	for metal in all_metals:
 		if( (metal.european_name == european_name) & (metal.comercial_name == comercial_name) ):
