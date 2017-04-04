@@ -1,4 +1,5 @@
 import pandas as pd
+from tkinter import messagebox
 
 areas_n_masses_filename = "areas_n_masses.csv"
 areas_n_masses = {}
@@ -31,7 +32,7 @@ def proper_closest(area,n_solutions):
 	best_solution = [] #[phi,n,area,error]
 
 	all_phi = [float(k) for k in areas_n_masses.keys() if float(k) < 15]
-	all_n = [i + 1 for i in range(11)]
+	all_n = [i + 1 for i in range(3,11)]
 	all_solutions = []
 
 	####abs value?
@@ -61,6 +62,7 @@ def proper_closest(area,n_solutions):
 		if(best_solution[3] > 99999998):
 			print("NOt enough solutions possible")
 			return None
+		
 		all_solutions.append(best_solution)
 		n_solutions = n_solutions - 1
 
