@@ -51,9 +51,11 @@ class window_placa(window):
 		label = Label(self.frame,text="Acoperire                  cm",font=("Helvetica", 10))
 		label.pack()
 		label.place(rely=0.19)
-		self.tb_acoperire = Text(self.frame,height=1,width=20)
+		self.tb_acoperire = Entry(self.frame,width=18)
 		self.tb_acoperire.pack()
 		self.tb_acoperire.place(rely=0.22)
+		self.tb_acoperire.insert(0,"1.5")
+		
 	
 		#Beton
 		self.label_beton = Label(self.frame, text="Beton: ",font=("Helvetica", 10))
@@ -104,23 +106,19 @@ class window_placa(window):
 		label = Label(self.frame,text="Numar de combinatii",font=("Helvetica", 10))
 		label.pack()
 		label.place(rely=0.55)
-		self.tb_computations = Text(self.frame,height=1,width=20)
+		self.tb_computations = Entry(self.frame,width=18)
 		self.tb_computations.pack()
 		self.tb_computations.place(rely=0.58)
+		self.tb_computations.insert(0,"7")
 		
 		#Run Button
 		run_button = Button(self.frame,text="Process",command=self.run_button_callback)
 		run_button.pack()
 		run_button.place(rely=0.67)
 		
-		#Info button
-		info_button = Button(self.frame,text="Info",command=self.info_button_callback)
-		info_button.pack()
-		info_button.config(width=3)
-		info_button.place(rely=0.21,relx=0.3)
 		
-	def info_button_callback(self):
-		messagebox.showinfo("Info Button","If left empty , it takes by default 1.5 cm")
+		
+	
 
 		### Define GUI here. Remember to also create callbacks for listboxes and buttons ###
 	def listbox_otel_callback(self,unused):
