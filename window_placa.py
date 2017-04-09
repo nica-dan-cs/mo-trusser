@@ -165,7 +165,7 @@ class window_placa(window):
 		b=1000
 		fcd=(beton.fck)/1.5
 		fyd=(otel.fyk)/1.15
-		print (acoperire)		
+				
 			
 		c=float(acoperire)*10
 		d=h-(c+5)
@@ -191,7 +191,7 @@ class window_placa(window):
 		Rho_min=max((0.26*beton.fctm)/otel.fyk,1.13/1000)
 		
 		nr=float(computations)
-		print (nr)
+		
 		all_solutions = proper_closest(As,nr) # n_solutions to be implemented by user/if none - by default	
 		
 		#defines position of the first labels	

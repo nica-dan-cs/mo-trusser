@@ -30,11 +30,12 @@ def all_areas_n_masses():
 
 def proper_closest(area,n_solutions):
 	best_solution = [] #[phi,n,area,error]
+	
 
 	all_phi = [float(k) for k in areas_n_masses.keys() if float(k) < 15]
 	all_n = [i + 1 for i in range(3,11)]
 	all_solutions = []
-
+	
 	####abs value?
 	best_solution = [0,0,0,99999999]	
 	for p in range(len(all_phi)):

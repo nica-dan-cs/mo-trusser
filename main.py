@@ -17,7 +17,7 @@ main_menu.wm_title("mo-trusser v 0.1")
 
 nb = Notebook(main_menu)
 nb.add(window_placa(500,500).retrieve_frame(),text="Placa")
-nb.add(window_grinda(500,500).retrieve_frame(),text="Grinda")
+#nb.add(window_grinda(500,500).retrieve_frame(),text="Grinda")
 
 nb.pack()
 main_menu.mainloop()
