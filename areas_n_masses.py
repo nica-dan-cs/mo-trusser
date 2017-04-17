@@ -11,7 +11,7 @@ def init_areas_n_masses():
 		area_for_1 = entry['area']
 		mass = entry['mass']
 		areas_n_masses[str(float(phi))] = [float(area_for_1),float(mass)]
-
+		
 def area_by_phi(phi,n):
 	area_for_1 = areas_n_masses[str(float(phi))][0]
 	area_for_n = n * area_for_1
