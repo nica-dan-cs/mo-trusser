@@ -120,7 +120,7 @@ class window_placa(window):
 		label = Label(self.frame,text="Directie",font=("Helvetica", 10))
 		label.pack()
 		label.place(rely=0.62)
-		self.tb_name = Entry(self.frame,width=20)
+		self.tb_name = Entry(self.frame,width=18)
 		self.tb_name.pack()
 		self.tb_name.place(rely=0.65)
 		
@@ -129,7 +129,7 @@ class window_placa(window):
 		label = Label(self.frame,text="Pozitie",font=("Helvetica", 10))
 		label.pack()
 		label.place(rely=0.69)
-		self.tb_location = Entry(self.frame,width=20)
+		self.tb_location = Entry(self.frame,width=18)
 		self.tb_location.pack()
 		self.tb_location.place(rely=0.72)
 		
@@ -204,7 +204,7 @@ class window_placa(window):
 			name=["none"]	
 		if location==['']:
 			location=["none"]
-		print(name,location)
+		
 		output=self.add_to_file(name,location) #variables defined here --> made them available in add_to_file function
 		
 
