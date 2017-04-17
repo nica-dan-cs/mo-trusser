@@ -193,7 +193,7 @@ class window_placa(window):
 
 		#creates the file with all requested data
 	def create_file_callback(self):
-		return dictionary_to_csv(self.all_written,self.all_written_keys,"testest.csv")
+		return dictionary_to_csv(self.all_written,self.all_written_keys,"armare_placa.csv")
 
 	def add_to_file_button_callback(self):
 		name=[]
@@ -201,9 +201,10 @@ class window_placa(window):
 		name.append(self.tb_name.get())
 		location.append(self.tb_location.get())
 		if name==['']:
-			name=["none"]
+			name=["none"]	
 		if location==['']:
 			location=["none"]
+		print(name,location)
 		output=self.add_to_file(name,location) #variables defined here --> made them available in add_to_file function
 		
 
@@ -220,7 +221,7 @@ class window_placa(window):
 					for smth in self.to_be_written_csv[h]:
 						ceva.append(smth)
 		except:
-			messagebox.showerror("Eroare","cevadfasdfsadf")
+			messagebox.showerror("Eroare","Selectati o optiune")
 		self.all_written["Directie"].append(str(name).strip("['']")) 
 		self.all_written["Pozitie"].append(str(location).strip("['']"))				
 		self.all_written["Nr bare"].append(ceva[0])
@@ -235,7 +236,6 @@ class window_placa(window):
 		### Perform computations here ###
 		to_be_written_csv={}
 		self.var=StringVar()
-
 
 		true=1		
 		h=float(grosime)*10

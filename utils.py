@@ -13,7 +13,6 @@ def dictionary_to_csv(dictionary,keys,csv_filename):
 	for i in range(len(dictionary["ρ [‰]"])):
 		row_of_values = ""
 		for k in keys:
-			
 			row_of_values = row_of_values + "," + str(dictionary[k][i])	
 			
 			
